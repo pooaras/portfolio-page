@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import classes from './style.module.css';
+import Navi from './nav';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      <section className={classes.sec} >
+      <p className={classes.name}>Pooarasu</p><br/>
+        <p className={classes.who}>I'm passionate Web developer</p>
+        <Navi />
+        
+      </section>
+        {/* fs */}
+      
     </div>
   );
 }
