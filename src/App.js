@@ -12,9 +12,9 @@ function App() {
         <p className={classes.who}>I'm passionate Web developer</p>
         <Navi /> <br/>
         <div className={classes.icon}>
-          <FaLinkedin className={classes.in}/>
-        <FaGithub className={classes.in}/>
-        <HiOutlineMail className={classes.in}/>
+          <a href='https://www.linkedin.com/in/pooarasu-s/'><FaLinkedin className={classes.in}/></a>
+          <a href='https://github.com/pooaras'><FaGithub className={classes.in}/></a>
+          <a href='mailto:pooarasusivaraj2002@gmail.com'><HiOutlineMail className={classes.in}/></a>
         </div>
       </section>
         {/* fs */}

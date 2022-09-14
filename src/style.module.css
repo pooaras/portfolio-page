@@ -68,9 +68,15 @@ body::before{
 
 
 }
-.icon > .in{
+.in{
     width: 30px;
-    height: 23px;
-    color: antiquewhite;
-    padding:10px ;
+    height: 22px;
+    padding: 5px;
+    color: rgb(162, 158, 154);
+    margin: 10px;
 }
+.in:hover{
+    color: antiquewhite;
+    transform: scale(1.2);
+}
+
