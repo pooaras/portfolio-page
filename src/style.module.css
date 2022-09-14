@@ -42,7 +42,7 @@ body::before{
 .who{
     position: relative;
     text-align: center;
-    top: 160px;
+    top: 180px;
     color: aliceblue;
     font-size: 30px;
 }
@@ -50,6 +50,7 @@ body::before{
    
     text-align: center;
     transform: translateY(190px);
+ 
 
 }
 .navi a{
@@ -60,4 +61,16 @@ body::before{
 }
 .navi a:hover{
     color: antiquewhite;
+}
+.icon{
+    text-align: center;
+    transform: translateY(190px);
+
+
+}
+.icon > .in{
+    width: 30px;
+    height: 23px;
+    color: antiquewhite;
+    padding:10px ;
 }
