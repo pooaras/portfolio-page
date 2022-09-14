@@ -13,3 +13,7 @@ if you delete react file then clone from git then you got error:
 for each deployment in react: git add .
 git commit -m "message"
 npm run deploy
+
+
+multipage react:
+https://isotropic.co/react-multiple-pages/
