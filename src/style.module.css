@@ -19,6 +19,9 @@ body::before{
     font-family: 'Poppins', sans-serif;
     
 }
+.navibar{
+    transform: translateY(190px);
+}
 .sec{
     min-height: 100vh;
     width: 100%;
@@ -45,22 +48,6 @@ body::before{
     top: 180px;
     color: aliceblue;
     font-size: 30px;
-}
-.navi{
-   
-    text-align: center;
-    transform: translateY(190px);
- 
-
-}
-.navi a{
-    color: rgb(162, 158, 154);
-    text-decoration: none;
-    padding: 10px;
- 
-}
-.navi a:hover{
-    color: antiquewhite;
 }
 .icon{
     text-align: center;

@@ -1,0 +1,16 @@
+.navi{
+   
+    text-align: center;
+    
+    
+
+}
+.navi a{
+    color: rgb(162, 158, 154);
+    text-decoration: none;
+    padding: 10px;
+ 
+}
+.navi a:hover{
+    color: antiquewhite;
+}
