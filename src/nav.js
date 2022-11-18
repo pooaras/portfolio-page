@@ -4,7 +4,7 @@ import classes from './stylenav.module.css'
     return(
         <div className={classes.navi}>
             <a href="/">Home</a>
-            <a href="/sec_page">About</a>
+            <a href="/sec_page/">About</a>
             <a href="Resume">Resume</a>
             <a href="Contact">Contact</a>
         </div>

@@ -7,7 +7,7 @@ function App() {
     case "/":
       compon=<Home/>
       break
-    case "/sec_page":
+    case "/sec_page/":
       compon=<Sec/>
       break;
     default:
