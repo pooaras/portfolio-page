@@ -1,0 +1,8 @@
+.sec{
+    min-height: 100vh;
+    width: 100%;
+    background-image: url("alchemist1.jpg");
+    background-position: 55% 90%;
+    background-size: cover;
+    position: relative;
+}
