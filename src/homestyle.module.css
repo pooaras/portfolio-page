@@ -6,3 +6,38 @@
     background-size: cover;
  
 }
+.name 
+{
+    margin-top: 10%;
+    margin-left: 20%;
+    font-size: 60px;
+    color: rgb(140, 163, 159);
+}
+.con
+{
+    margin-left: 20%;
+    font-size: 38px;
+    color: rgb(140, 163, 159);
+}
+.con {
+    display: inline-block;
+    position: relative;
+  }
+  
+  .con::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0.4);
+    height: 3px;
+    bottom: 0;
+    right: 0;
+    background-color: #518097;
+    transform-origin: bottom left;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .con:hover::after {
+    transform: scaleX(1.01);
+    transform-origin: bottom left;
+  }

@@ -6,4 +6,46 @@
     font-weight: 700;
     color:antiquewhite;
 }
+.body{
+    margin-top: 40px;
+    margin-left: 100px;
+    position: relative;
+}
+.skil{
+    width: 30%;
+    font-size: larger;
+}
+  
+.hover {
+    display: inline-block;
+    position: relative;
+  }
+  
+  .hover::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0.4);
+    height: 3px;
+    bottom: 0;
+    right: 0;
+    background-color: #518097;
+    transform-origin: bottom left;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .hover:hover::after {
+    transform: scaleX(1.01);
+    transform-origin: bottom left;
+  }
 
+ .pic{
+    width: 250px;
+    margin-top: -600px;
+    margin-left: 900px;
+    border-radius: 17px;
+ } 
+
+ .spot:hover{
+    transform: scale(1.19);
+ }
