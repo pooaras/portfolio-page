@@ -4,7 +4,8 @@ for deploying follow the steps in the below link:
 https://enlear.academy/how-to-deploy-react-app-on-azure-dbf36111cd54
 If routes not working create web.config file and add the below code in it
 <pre>
-  
+  <p>
+    
 <?xml version="1.0"?>
 <configuration>
   <system.webServer>
@@ -23,5 +24,5 @@ If routes not working create web.config file and add the below code in it
     </rewrite>
   </system.webServer>
 </configuration>
-
+  </p>
 </pre>
