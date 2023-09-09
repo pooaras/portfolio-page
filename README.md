@@ -5,6 +5,9 @@ For deploying follow the steps in the below link:
 https://enlear.academy/how-to-deploy-react-app-on-azure-dbf36111cd54
 </pre>
 If routes not working create web.config file and add the below code in it
+<myxml>
+   <someElement />  
+</myxml>
 ```
 <?xml version="1.0"?>
 <configuration>
