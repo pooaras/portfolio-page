@@ -4,8 +4,8 @@ visit the link:https://portfolio-page-git-master-pooaras.vercel.app/
 For deploying follow the steps in the below link:
 https://enlear.academy/how-to-deploy-react-app-on-azure-dbf36111cd54
 </pre>
-<pre>
 If routes not working create web.config file and add the below code in it
+<pre>
 <!-- <?xml version="1.0"?> -->
 <configuration>
   <system.webServer>
