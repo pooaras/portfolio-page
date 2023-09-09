@@ -3,6 +3,8 @@ visit the link:https://portfolio-page-git-master-pooaras.vercel.app/
 for deploying follow the steps in the below link:
 https://enlear.academy/how-to-deploy-react-app-on-azure-dbf36111cd54
 If routes not working create web.config file and add the below code in it
+<pre>
+  
 <?xml version="1.0"?>
 <configuration>
   <system.webServer>
@@ -22,3 +24,4 @@ If routes not working create web.config file and add the below code in it
   </system.webServer>
 </configuration>
 
+</pre>
