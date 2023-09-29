@@ -23,12 +23,9 @@
   
   .hover::after {
     content: '';
-    position: absolute;
     width: 100%;
     transform: scaleX(0.4);
     height: 3px;
-    bottom: 0;
-    right: 0;
     background-color: #518097;
     transform-origin: bottom left;
     transition: transform 0.25s ease-out;
@@ -40,12 +37,39 @@
   }
 
  .pic{
-    width: 250px;
-    margin-top: -600px;
-    margin-left: 900px;
+    width: 330px;
     border-radius: 17px;
  } 
+ /* aside{
+  float: right;
+ } */
 
  .spot:hover{
     transform: scale(1.19);
  }
+ div{
+  overflow: hidden;
+}
+  @media only screen and (max-width:768px) {
+    .body{
+      margin-top: 5px;
+      margin-left: 5px;
+      margin-top: 12px;
+    }
+    .resume{
+      font-size: 16px;
+    font-weight: 300;
+    }
+    .skil{
+      width: 98%;
+    }
+    .pic{
+      display: flex;
+      margin: auto;
+
+    }
+    div{
+      overflow: hidden;
+    }
+    
+  }
