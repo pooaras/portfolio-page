@@ -2,3 +2,18 @@
 {
         transform: scale(1.35);
 }
+.icon2{
+        width: 100px;
+        height: 10px;
+}
+.icon2:hover{
+        color:aliceblue;
+        background-color: aliceblue;
+}
+.bat{
+        border-radius: 160%;
+        margin-right: 100px;
+}
+.bat:hover{
+        filter: drop-shadow(0 0 10px rgb(255, 255, 255));
+}
