@@ -1,62 +1,65 @@
-import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
-import clss from "./nav.module.css";
-import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
-import { SiGmail } from "react-icons/si";
+import { useEffect, useRef, useState } from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
+import { Link, useLocation } from 'react-router-dom';
+import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
+import { SiGmail } from 'react-icons/si';
+import styles from './nav.module.css';
+
+const socialLinks = [
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/pooarasu-s/', icon: <AiFillLinkedin /> },
+  { label: 'GitHub', href: 'https://github.com/pooaras', icon: <AiFillGithub /> },
+  { label: 'Email', href: 'mailto:pooarasusivaraj2002@gmail.com', icon: <SiGmail /> },
+];
+
 export function Navb() {
-  return (
-    <div>
-      <Navbar bg="dark" variant="dark">
-        <Container>
-          <Navbar.Brand href="/">Home</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="/profile">profile</Nav.Link>
-          </Nav>
-          <span className={clss.bat}>
-            <svg
-              version="1.0"
-              xmlns="http://www.w3.org/2000/svg"
-              width="50pt"
-              height="25pt"
-              viewBox="0 0 300.000000 116.000000"
-              preserveAspectRatio="xMidYMid meet"
-            >
-              <g
-                transform="translate(0.000000,116.000000) scale(0.100000,-0.100000)"
-                fill="#000000"
-                stroke="none"
-              >
-                <path
-                  d="M271 965 c191 -99 290 -219 292 -353 0 -33 -6 -72 -15 -88 l-14 -30
-210 0 c253 0 346 -17 492 -89 109 -53 195 -137 234 -228 14 -31 28 -57 31 -57
-3 0 16 26 29 58 16 39 44 77 89 123 147 148 372 210 704 195 l148 -6 -17 32
-c-25 49 -22 135 9 201 52 114 154 195 357 285 19 8 -90 10 -423 9 l-449 -2
--19 -55 c-25 -71 -47 -101 -92 -123 -46 -23 -209 -36 -231 -18 -8 7 -20 38
--27 69 -10 47 -13 53 -19 32 -5 -23 -11 -25 -60 -25 -49 0 -55 2 -60 24 -5 21
--8 15 -18 -29 -7 -29 -17 -59 -23 -67 -15 -17 -117 -17 -193 1 -73 17 -101 44
--131 127 l-23 64 -443 2 -444 2 106 -54z"
-                />
-              </g>
-            </svg>
-          </span>
-          <a
-            style={{ color: "white" }}
-            href="https://www.linkedin.com/in/pooarasu-s/"
-          >
-            <AiFillLinkedin className={clss.icon} />
-          </a>
-          &nbsp;&nbsp;&nbsp;&nbsp;
-          <a style={{ color: "white" }} href="https://github.com/pooaras">
-            <AiFillGithub className={clss.icon} />
-          </a>
-          &nbsp;&nbsp;&nbsp;&nbsp;
-          <a
-            style={{ color: "white" }}
-            href="mailto:pooarasusivaraj2002@gmail.com"
-          >
-            <SiGmail className={clss.icon} />
-          </a>
-        </Container>
-      </Navbar>
-    </div>
-  );
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const reduced = useReducedMotion();
+  const menuRef = useRef(null);
+  const toggleRef = useRef(null);
+
+  useEffect(() => {
+    const update = () => setScrolled(window.scrollY > 12);
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+    return () => window.removeEventListener('scroll', update);
+  }, []);
+
+  useEffect(() => {
+    setOpen(false);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    document.body.classList.toggle('menu-open', open);
+    if (open) menuRef.current?.querySelector('a')?.focus();
+    const onKeyDown = event => {
+      if (event.key === 'Escape' && open) {
+        setOpen(false);
+        toggleRef.current?.focus();
+      }
+      if (event.key === 'Tab' && open) {
+        const links = menuRef.current?.querySelectorAll('a[href]');
+        if (!links?.length) return;
+        const first = links[0];
+        const last = links[links.length - 1];
+        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+        else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+      }
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => { document.body.classList.remove('menu-open'); window.removeEventListener('keydown', onKeyDown); };
+  }, [open]);
+
+  const closeMenu = () => setOpen(false);
+  return <motion.header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`} initial={reduced ? false : { opacity: 0, y: -9 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: reduced ? .01 : .35, ease: 'easeOut' }}>
+    <nav className={styles.nav} aria-label="Main navigation">
+      <Link className={styles.brand} to="/" onClick={closeMenu} aria-label="Pooarasu home"><span className={styles.brandMark}>P</span><span>Pooarasu<span className={styles.brandDot}>.</span></span></Link>
+      <div ref={menuRef} className={`${styles.menu} ${open ? styles.menuOpen : ''}`} id="primary-menu">
+        <div className={styles.navLinks}><Link to="/#work" onClick={closeMenu}>Work</Link><Link to="/#about" onClick={closeMenu}>About</Link></div>
+        <div className={styles.rightLinks}><a className={styles.contact} href="mailto:pooarasusivaraj2002@gmail.com" onClick={closeMenu}>Let’s talk <span>↗</span></a><div className={styles.socials}>{socialLinks.map(item => <a key={item.label} href={item.href} aria-label={item.label} target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noreferrer' : undefined}>{item.icon}<span className={styles.socialLabel}>{item.label}</span></a>)}</div></div>
+      </div>
+      <button ref={toggleRef} className={`${styles.toggle} ${open ? styles.toggleOpen : ''}`} type="button" aria-label={open ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={open} aria-controls="primary-menu" onClick={() => setOpen(value => !value)}><span /><span /></button>
+    </nav>
+  </motion.header>;
 }

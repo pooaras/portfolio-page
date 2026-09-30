@@ -1,8 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders the software engineer portfolio', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(/Building thoughtful.*web products/i);
+  expect(screen.getByRole('link', { name: /view my work/i })).toBeInTheDocument();
+  expect(screen.getByRole('link', { name: 'About' })).toHaveAttribute('href', '/#about');
+  expect(screen.getByText(/Anna University Regional Office/)).toBeInTheDocument();
 });
