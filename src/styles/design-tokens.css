@@ -1,0 +1,199 @@
+/**
+ * Design Tokens - Professional Dark Theme
+ * Single source of truth for colors, typography, spacing, and motion
+ */
+
+:root {
+  /* ===========================================
+     COLOR PALETTE
+     =========================================== */
+
+  /* Backgrounds - Layered depth */
+  --bg-primary: #0a0f1a;        /* Deepest - page background */
+  --bg-secondary: #111827;      /* Cards, sections */
+  --bg-tertiary: #1e293b;       /* Elevated elements, inputs */
+  --bg-glass: rgba(17, 24, 39, 0.7);  /* Glassmorphism base */
+  --bg-glass-hover: rgba(30, 41, 59, 0.85);
+
+  /* Accent - Blue family */
+  --accent-primary: #3b82f6;    /* Primary actions, links */
+  --accent-secondary: #60a5fa;  /* Hover states, secondary */
+  --accent-muted: #1e3a5f;      /* Subtle backgrounds, borders */
+  --accent-glow: rgba(59, 130, 246, 0.15); /* Glow effects */
+
+  /* Text - High contrast for readability */
+  --text-primary: #f8fafc;      /* Headings, primary content */
+  --text-secondary: #cbd5e1;    /* Body text, descriptions */
+  --text-muted: #64748b;        /* Captions, metadata, disabled */
+  --text-inverse: #0f172a;      /* On accent backgrounds */
+
+  /* Borders & Dividers */
+  --border-primary: #1e293b;    /* Default borders */
+  --border-secondary: #334155;  /* Hover/focus borders */
+  --border-accent: #3b82f6;     /* Focus rings, active states */
+
+  /* Semantic */
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --error: #ef4444;
+
+  /* ===========================================
+     TYPOGRAPHY
+     =========================================== */
+
+  /* Font Families */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+
+  /* Fluid Type Scale (clamp: min, preferred, max) */
+  --text-xs: clamp(0.7rem, 0.65rem + 0.25vw, 0.75rem);      /* 11-12px */
+  --text-sm: clamp(0.8rem, 0.75rem + 0.25vw, 0.875rem);     /* 13-14px */
+  --text-base: clamp(0.95rem, 0.875rem + 0.375vw, 1.125rem); /* 15-18px */
+  --text-lg: clamp(1.125rem, 1rem + 0.625vw, 1.375rem);     /* 18-22px */
+  --text-xl: clamp(1.375rem, 1.125rem + 1.25vw, 1.75rem);   /* 22-28px */
+  --text-2xl: clamp(1.75rem, 1.375rem + 1.875vw, 2.5rem);   /* 28-40px */
+  --text-3xl: clamp(2.25rem, 1.75rem + 2.5vw, 3.5rem);      /* 36-56px */
+  --text-4xl: clamp(3rem, 2.25rem + 3.75vw, 5rem);          /* 48-80px */
+  --text-5xl: clamp(4rem, 3rem + 5vw, 7rem);                /* 64-112px */
+
+  /* Font Weights */
+  --font-light: 300;
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  /* Line Heights */
+  --leading-tight: 1.1;
+  --leading-snug: 1.375;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.75;
+
+  /* ===========================================
+     SPACING (4px base unit)
+     =========================================== */
+  --space-0: 0;
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+  --space-32: 8rem;     /* 128px */
+
+  /* ===========================================
+     BORDER RADIUS
+     =========================================== */
+  --radius-none: 0;
+  --radius-sm: 0.25rem;   /* 4px */
+  --radius-md: 0.5rem;    /* 8px */
+  --radius-lg: 0.75rem;   /* 12px */
+  --radius-xl: 1rem;      /* 16px */
+  --radius-2xl: 1.5rem;   /* 24px */
+  --radius-full: 9999px;
+
+  /* ===========================================
+     SHADOWS & GLOW
+     =========================================== */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+  --shadow-glow: 0 0 40px var(--accent-glow);
+  --shadow-glow-lg: 0 0 80px var(--accent-glow);
+
+  /* ===========================================
+     TRANSITIONS & MOTION
+     =========================================== */
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 350ms;
+  --duration-slower: 500ms;
+  --duration-entrance: 800ms;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ===========================================
+     LAYOUT
+     =========================================== */
+  --container-max: 1200px;
+  --container-padding: var(--space-6);
+  --header-height: 72px;
+  --header-height-scrolled: 64px;
+
+  /* ===========================================
+     Z-INDEX
+     =========================================== */
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-modal: 300;
+  --z-toast: 400;
+  --z-tooltip: 500;
+}
+
+/* ===========================================
+   REDUCED MOTION
+   =========================================== */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-normal: 0ms;
+    --duration-slow: 0ms;
+    --duration-slower: 0ms;
+    --duration-entrance: 0ms;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===========================================
+   FOCUS VISIBLE
+   =========================================== */
+:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+/* ===========================================
+   SELECTION
+   =========================================== */
+::selection {
+  background-color: var(--accent-primary);
+  color: var(--text-inverse);
+}
+
+/* ===========================================
+   SCROLLBAR (WebKit)
+   =========================================== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-primary);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-secondary);
+}
